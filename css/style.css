@@ -1,0 +1,29 @@
+h1, p {
+    text-align: center;
+}
+
+.angularimg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.result {
+    font-size: 50px;
+    color: #00b12c;
+}
+
+.mainCalculator {
+    margin: 0 auto;
+    width: 100px; 
+}
+
+.inputfields {
+    margin: 0 auto; 
+    text-align: center;
+}
+
+.btn-wrapper {
+    margin: 0 auto; 
+    text-align: center;
+}

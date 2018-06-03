@@ -1,2 +1,2 @@
 # AngularCalculatorBasic
-This is a basic Angular calculator
+This is a basic Angular+Bootstrap calculator
