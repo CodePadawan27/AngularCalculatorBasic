@@ -67,6 +67,22 @@ var calculator = angular.module('angularCalculator', ['ui.bootstrap'])
             }
         };
 
+        $scope.doThePow = function () {
+            try {
+                var firstInput = Number($scope.firstNumber);
+                var secondInput = Number($scope.secondNumber);
+                if (isNaN(firstInput) || isNaN(secondInput)) {
+                    throw new Error("Not a number")
+                }
+                else {
+                    $scope.result = Math.pow(firstInput, secondInput)
+                }
+            }
+            catch (e) {
+                $scope.result = "Virheellinen syöttö";
+            }
+        };
+
         //Tyhjentää tekstikentät ja tuloksen ruudulta
         $scope.clear = function () {
             $scope.firstNumber = undefined;
