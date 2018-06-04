@@ -69,8 +69,8 @@ var calculator = angular.module('angularCalculator', ['ui.bootstrap'])
 
         //Tyhjentää tekstikentät ja tuloksen ruudulta
         $scope.clear = function () {
-            $scope.firstNumber = '';
-            $scope.secondNumber = '';
+            $scope.firstNumber = undefined;
+            $scope.secondNumber = undefined;
             $scope.result = '';
             //window.location.reload();
         };
