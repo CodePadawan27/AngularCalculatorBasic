@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>AngularJs laskin</title>
     <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.8/angular.min.js"></script>
@@ -14,29 +15,31 @@
 </head>
 
 <body>
-    <h1>AngularJS-peruslaskin</h1>
-    <img class="angularimg" src="content/angular_logo.png">
-    <p>Syötä numerot alla oleviin kenttiin ja paina haluamaasi aritmeettista operaattoria.</p>
-    <p>Desimaalilukuja käytettäessä käytä pistettä erottimena.</p>
-    <div ng-app="angularCalculator" ng-controller="calculatorCtrl">
-        <br>
-        <div class="inputfields">
-            <input type="text" placeholder="Luku1" ng-model="firstNumber" autofocus>
-            <input type="text" placeholder="Luku2" ng-model="secondNumber">
-        </div>
-        <br>
-        <br>
-        <div class="btn-wrapper">
-            <div class="btn-group">
-                <label class="btn btn-success" ng-click="doTheAdd()" btn-checkbox>+</label>
-                <label class="btn btn-success" ng-click="doTheSubstract()" btn-checkbox>-</label>
-                <label class="btn btn-success" ng-click="doTheMultiply()" btn-checkbox>*</label>
-                <label class="btn btn-success" ng-click="doTheDivide()" btn-checkbox>/</label>
-                <label class="btn btn-warning" ng-click="clear()" btn-checkbox>Tyhjennä</label>
+    <div class="animated fadeInDown">
+        <h1>AngularJS-peruslaskin</h1>
+        <img class="angularimg" src="content/angular_logo.png">
+        <p>Syötä numerot alla oleviin kenttiin ja paina haluamaasi aritmeettista operaattoria.</p>
+        <p>Desimaalilukuja käytettäessä käytä pistettä erottimena.</p>
+        <div ng-app="angularCalculator" ng-controller="calculatorCtrl">
+            <br>
+            <div class="inputfields">
+                <input type="text" placeholder="Luku1" ng-model="firstNumber" autofocus>
+                <input type="text" placeholder="Luku2" ng-model="secondNumber">
             </div>
+            <br>
+            <br>
+            <div class="btn-wrapper">
+                <div class="btn-group">
+                    <label class="btn btn-success" ng-click="doTheAdd()" btn-checkbox>+</label>
+                    <label class="btn btn-success" ng-click="doTheSubstract()" btn-checkbox>-</label>
+                    <label class="btn btn-success" ng-click="doTheMultiply()" btn-checkbox>*</label>
+                    <label class="btn btn-success" ng-click="doTheDivide()" btn-checkbox>/</label>
+                    <label class="btn btn-warning" ng-click="clear()" btn-checkbox>Tyhjennä</label>
+                </div>
+            </div>
+            <br>
+            <p class="result">{{ result || "0"}}</p>
         </div>
-        <br>
-        <p class="result">{{ result || "0"}}</p>
     </div>
 
 </body>
