@@ -1,63 +1,69 @@
 var calculator = angular.module('angularCalculator', ['ui.bootstrap'])
     .controller('calculatorCtrl', function ($scope) {
 
-        //Tarkistaa, onko annetut luvut numeroita ja palauttaa sen mukaan tosi/epätosi
-        function validate(first, second) {
-            if (isNaN(first) || isNaN(second)) {
-                return false;
-            }
-            else {
-                return true;
-            }
-        }
-
         //Suorittaa yhteenlaskun annetuille luvuille
         $scope.doTheAdd = function () {
-            var firstInput = Number($scope.firstNumber);
-            var secondInput = Number($scope.secondNumber);
-
-            if (!validate(firstInput, secondInput)) {
-                $scope.result = 'Virheellinen syöttö';
+            try {
+                var firstInput = Number($scope.firstNumber);
+                var secondInput = Number($scope.secondNumber);
+                if (isNaN(firstInput) || isNaN(secondInput)) {
+                    throw new Error("Not a number")
+                }
+                else {
+                    $scope.result = firstInput + secondInput
+                }
             }
-            else {
-                $scope.result = firstInput + secondInput
+            catch (e) {
+                $scope.result = "Virheellinen syöttö";
             }
         };
 
         //Suorittaa vähennyslaskun annetuille luvuille
         $scope.doTheSubstract = function () {
-            var firstInput = Number($scope.firstNumber);
-            var secondInput = Number($scope.secondNumber);
-
-            if (!validate(firstInput, secondInput)) {
-                $scope.result = 'Virheellinen syöttö';
+            try {
+                var firstInput = Number($scope.firstNumber);
+                var secondInput = Number($scope.secondNumber);
+                if (isNaN(firstInput) || isNaN(secondInput)) {
+                    throw new Error("Not a number")
+                }
+                else {
+                    $scope.result = firstInput - secondInput
+                }
             }
-            else {
-                $scope.result = firstInput - secondInput
+            catch (e) {
+                $scope.result = "Virheellinen syöttö";
             }
         };
         //Suorittaa kertolaskun syötetyille luvuille
         $scope.doTheMultiply = function () {
-            var firstInput = Number($scope.firstNumber);
-            var secondInput = Number($scope.secondNumber);
-
-            if (!validate(firstInput, secondInput)) {
-                $scope.result = 'Virheellinen syöttö';
+            try {
+                var firstInput = Number($scope.firstNumber);
+                var secondInput = Number($scope.secondNumber);
+                if (isNaN(firstInput) || isNaN(secondInput)) {
+                    throw new Error("Not a number")
+                }
+                else {
+                    $scope.result = firstInput * secondInput
+                }
             }
-            else {
-                $scope.result = firstInput * secondInput
+            catch (e) {
+                $scope.result = "Virheellinen syöttö";
             }
         };
         //Suorittaa jakolaskun syötetyille luvuille
         $scope.doTheDivide = function () {
-            var firstInput = Number($scope.firstNumber);
-            var secondInput = Number($scope.secondNumber);
-
-            if (!validate(firstInput, secondInput)) {
-                $scope.result = 'Virheellinen syöttö';
+            try {
+                var firstInput = Number($scope.firstNumber);
+                var secondInput = Number($scope.secondNumber);
+                if (isNaN(firstInput) || isNaN(secondInput)) {
+                    throw new Error("Not a number")
+                }
+                else {
+                    $scope.result = firstInput / secondInput
+                }
             }
-            else {
-                $scope.result = firstInput / secondInput
+            catch (e) {
+                $scope.result = "Virheellinen syöttö";
             }
         };
 
