@@ -7,14 +7,14 @@ var calculator = angular.module('angularCalculator', ['ui.bootstrap'])
                 var firstInput = Number($scope.firstNumber);
                 var secondInput = Number($scope.secondNumber);
                 if (isNaN(firstInput) || isNaN(secondInput)) {
-                    throw new Error("Not a number")
+                    throw new Error("Virheellinen syöttö")
                 }
                 else {
                     $scope.result = firstInput + secondInput
                 }
             }
             catch (e) {
-                $scope.result = "Virheellinen syöttö";
+                $scope.result = e.message;
             }
         };
 
@@ -24,14 +24,14 @@ var calculator = angular.module('angularCalculator', ['ui.bootstrap'])
                 var firstInput = Number($scope.firstNumber);
                 var secondInput = Number($scope.secondNumber);
                 if (isNaN(firstInput) || isNaN(secondInput)) {
-                    throw new Error("Not a number")
+                    throw new Error("Virheellinen syöttö")
                 }
                 else {
                     $scope.result = firstInput - secondInput
                 }
             }
             catch (e) {
-                $scope.result = "Virheellinen syöttö";
+                $scope.result = e.message;
             }
         };
         //Suorittaa kertolaskun syötetyille luvuille
@@ -40,14 +40,14 @@ var calculator = angular.module('angularCalculator', ['ui.bootstrap'])
                 var firstInput = Number($scope.firstNumber);
                 var secondInput = Number($scope.secondNumber);
                 if (isNaN(firstInput) || isNaN(secondInput)) {
-                    throw new Error("Not a number")
+                    throw new Error("Virheellinen syöttö")
                 }
                 else {
                     $scope.result = firstInput * secondInput
                 }
             }
             catch (e) {
-                $scope.result = "Virheellinen syöttö";
+                $scope.result = e.message;
             }
         };
         //Suorittaa jakolaskun syötetyille luvuille
@@ -56,30 +56,33 @@ var calculator = angular.module('angularCalculator', ['ui.bootstrap'])
                 var firstInput = Number($scope.firstNumber);
                 var secondInput = Number($scope.secondNumber);
                 if (isNaN(firstInput) || isNaN(secondInput)) {
-                    throw new Error("Not a number")
+                    throw new Error("Virheellinen syöttö")
+                }
+                else if (secondInput === 0) {
+                    throw new Error("Nollalla ei voi jakaa")
                 }
                 else {
                     $scope.result = firstInput / secondInput
                 }
             }
             catch (e) {
-                $scope.result = "Virheellinen syöttö";
+                $scope.result = e.message;
             }
         };
-
+        //Suorittaa potenssilaskun syötetyille luvuille
         $scope.doThePow = function () {
             try {
                 var firstInput = Number($scope.firstNumber);
                 var secondInput = Number($scope.secondNumber);
                 if (isNaN(firstInput) || isNaN(secondInput)) {
-                    throw new Error("Not a number")
+                    throw new Error("Virheellinen syöttö")
                 }
                 else {
                     $scope.result = Math.pow(firstInput, secondInput)
                 }
             }
             catch (e) {
-                $scope.result = "Virheellinen syöttö";
+                $scope.result = e.message;
             }
         };
 
