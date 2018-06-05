@@ -34,6 +34,7 @@ var calculator = angular.module('angularCalculator', ['ui.bootstrap'])
                 $scope.result = e.message;
             }
         };
+
         //Suorittaa kertolaskun syötetyille luvuille
         $scope.doTheMultiply = function () {
             try {
@@ -50,6 +51,7 @@ var calculator = angular.module('angularCalculator', ['ui.bootstrap'])
                 $scope.result = e.message;
             }
         };
+
         //Suorittaa jakolaskun syötetyille luvuille
         $scope.doTheDivide = function () {
             try {
@@ -69,6 +71,7 @@ var calculator = angular.module('angularCalculator', ['ui.bootstrap'])
                 $scope.result = e.message;
             }
         };
+        
         //Suorittaa potenssilaskun syötetyille luvuille
         $scope.doThePow = function () {
             try {
